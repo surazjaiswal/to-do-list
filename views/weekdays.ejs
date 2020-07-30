@@ -22,13 +22,14 @@
       <input type="checkbox" name="chk_bx" value="<%= item.id %>" onChange="this.form.submit()";>
       <p><%= item.itemName %></p>
     </div>
+    <input type="hidden" name="thisList" value="<%= dayName1 %>"></input>
     </form>
 
     <% }) %>
 
     <form class="item" action="/" method="post">
-      <input type="text" name="item" placeholder="New Item" autocomplete="off">
-      <button type="submit" name="submit"> + </button>
+      <input type="text" name="item" placeholder="Add New Item..." autocomplete="off">
+      <button type="submit" name="submit" value="<%= dayName1 %>"> + </button>
     </form>
   </div>
 
