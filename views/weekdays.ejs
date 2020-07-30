@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Weekday's</title>
+  <title>To-Do-List</title>
   <link rel="stylesheet" href="css/styles.css">
 </head>
 
@@ -14,12 +14,17 @@
   </div>
 
   <div class="box">
-    <% for(var i=0;i<newListItem.length;i++){ %>
+
+    <% newListItem.forEach(function(item){ %>
+
+    <form action="/delete" method="post">
     <div class="item">
-      <input type="checkbox">
-      <p><%= newListItem[i] %></p>
+      <input type="checkbox" name="chk_bx" value="<%= item.id %>" onChange="this.form.submit()";>
+      <p><%= item.itemName %></p>
     </div>
-    <% } %>
+    </form>
+
+    <% }) %>
 
     <form class="item" action="/" method="post">
       <input type="text" name="item" placeholder="New Item" autocomplete="off">
